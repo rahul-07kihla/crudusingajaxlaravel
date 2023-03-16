@@ -183,9 +183,9 @@
                         descriptionValidation = '<li>' + errors.description[0] + '</li>';
                     }
                     let nameValidation = "";
-                    if (typeof errors.name !== 'undefined')
+                    if (typeof errors.title !== 'undefined')
                     {
-                        nameValidation = '<li>' + errors.name[0] + '</li>';
+                        nameValidation = '<li>' + errors.title[0] + '</li>';
                     }
 
                     let errorHtml = '<div class="alert alert-danger" role="alert">' +
@@ -263,9 +263,9 @@
                         descriptionValidation = '<li>' + errors.description[0] + '</li>';
                     }
                     let nameValidation = "";
-                    if (typeof errors.name !== 'undefined')
+                    if (typeof errors.title !== 'undefined')
                     {
-                        nameValidation = '<li>' + errors.name[0] + '</li>';
+                        nameValidation = '<li>' + errors.title[0] + '</li>';
                     }
 
                     let errorHtml = '<div class="alert alert-danger" role="alert">' +
