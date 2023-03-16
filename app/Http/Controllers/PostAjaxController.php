@@ -14,7 +14,7 @@ class PostAjaxController extends Controller
     public function index(Request $request)
     {
         $post = Post::latest()->get();
-        // dd($post);
+
         if ($request->ajax()) {
             return Datatables::of($post)
                     ->addIndexColumn()
@@ -24,7 +24,7 @@ class PostAjaxController extends Controller
 
                             $btn .= '<button class="btn btn-outline-info" onclick="showProject(' . $row->id . ')">Show</button> ';
 
-                            $btn = $btn.' <a href="javascript:void(0)" data-toggle="tooltip"  data-id="'.$row->id.'" data-original-title="Delete" class="btn btn-danger btn-sm deletePost">Delete</a>';
+                            $btn = $btn.' <button  class="btn btn-outline-danger" onclick="destroyProject(' . $row->id . ')">Delete</button> ';
 
                             return $btn;
                     })
@@ -96,9 +96,9 @@ class PostAjaxController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Post $post)
+    public function destroy($id)
     {
-        Post::destroy($post);
+        Post::destroy($id);
         return response()->json(['status' => "success"]);
     }
 }

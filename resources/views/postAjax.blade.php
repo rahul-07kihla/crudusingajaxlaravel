@@ -306,9 +306,9 @@
     */
     function destroyProject(id)
     {
-        let url = $('meta[name=app-url]').attr("content") + "/ajaxposts/" + id;
+        let url = "/ajaxposts/" + id;
         let data = {
-            name: $("#name").val(),
+            name: $("#title").val(),
             description: $("#description").val(),
         };
         $.ajax({
